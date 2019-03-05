@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Phone Directory Application</title>
+<style>
+#dv1
+{
+width:100%;
+height:50px;
+background-color:black;
+}
+#dv2
+{
+margin-top:140px;
+margin-bottom:800px;
+margin-left:550px;
+margin-right:400px;
+border:1px solid black;
+width:250px;
+height:350px;
+border-radius:50px;
+box-shadow:5px 5px 5px 3px;
+}
+#hd
+{
+color:magenta;
+font-size:25px;
+line-height:45px;
+}
+input
+{
+height:30px;
+margin-top:15px;
+margin-left:13px;
+font-size:17px;
+text-align:center;
+}
+#pr
+{
+margin-left:80px;
+width:10px;
+color:green;
+}
+#btn
+{
+color:Black;
+background-color:green;
+}
+.pgp
+{
+font-size:20px;
+color:black;
+margin-left:9px;
+margin-bottom:15px;
+}
+h3
+{
+margin-left:7px;
+}
+</style>
+<head>
+<body>
+
+<div id="dv1">
+<P id="hd"><marquee>Phone Directory</marquee></P>
+</div>
+
+<div id="dv2">
+<p><input id="p3"type="text" maxlength="15" placeholder="Name" name="name"></p>
+<P><input id="p4"type="phoneNumber" maxlength="10" placeholder="Phone Number"name="phone"></p>
+<input id="btn"type="submit" value="ADD"onclick="Add()" >
+<input id="btn"type="submit" value="Back"onclick="Back()" >
+<h3> Subscriber to be added:</h3>
+<p id="p1"class="pgp">Name:</p>
+<p id="p2"class="pgp">Phone Number:</p>
+</div>
+      </form>
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+<script>
+var nameField = document.getElementById("p3");
+nameField.addEventListener("keyup", fun);
+var phoneField = document.getElementById("p4");
+phoneField.addEventListener("keyup", fun);
+function fun()
+{
+document.getElementById("p1").innerHTML="Name: " + nameField.value;
+document.getElementById("p2").innerHTML="Phone: "+ phoneField.value;
+}
+function Add()
+{
+var nameField = document.getElementById("p3");
+var phoneField = document.getElementById("p4");
+location.assign("ADD.html");
+localStorage.setItem("name", nameField.value);
+localStorage.setItem("name", nameField.value);
+}
+function Back()
+{
+location.assign("ADD.html");
+}
+</script>
+</body>
+</html>
